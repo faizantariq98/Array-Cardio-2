@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Cardio</title>
+</head>
+<body>
+    <p><em>Psst:have a look at javascript console</em></p>
+    <script>
+        const people=[
+            {name:'Wes', year:1988},
+            {name:'Kait', year:1986},
+            {name:'Irv', year:1970},
+            {name:'Lux', year:2015}]
+
+        const comments=[
+            {text:'Super Good',id:12345},
+            {text:'Love this!',id:52423},
+            {text:'you are the best', id:203984},
+            {text:'Noodles are my favourite food ever',id:123523},
+            {text:'Nice Nice Nice', id:542328}
+        ]
+
+        //checks if atleast one element is > 19
+        const isAdult=people.some(person=>(new Date()).getFullYear()-person.year >= 19);
+        console.log({isAdult});
+
+        //checks if every single element of array is >19
+        const allAdult = people.every(person=>(new Date()).getFullYear()-person.year >= 19);
+        console.log({allAdult});
+        
+        //Checks the first element if present in an array
+        const comment = comments.find(comm=>(comm.id===203984))
+        console.log(comment);
+
+        //delete the love this comment from comments array
+        const index=comments.findIndex(comm=>(comm.id===52423));
+        comments.splice(index,1);
+        console.log(comments);
+    </script>
+</body>
+</html>
